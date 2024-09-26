@@ -1,13 +1,14 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-// import Image from "next/image";
-// import {motion}
+import Footer from '@/components/Footer'
+import Home from '@/components/Home'
+import React from 'react'
 
-export default function Home() {
+const page = () => {
   return (
-    <div>
-      <Button>hello</Button>
-    </div>
-  );
+  <>
+  <Home />
+  <Footer />
+  </>
+  )
 }
+
+export default page
