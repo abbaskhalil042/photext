@@ -13,11 +13,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
-
 model User {
-  id            String    @id @default(cuid())
+  id            String    @id @default(cuid()) // This should work correctly
   name          String?
   email         String    @unique
   emailVerified DateTime?
@@ -28,6 +25,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   posts         Post[]
 }
+
 
 model Post {
   id        String   @id @default(cuid())

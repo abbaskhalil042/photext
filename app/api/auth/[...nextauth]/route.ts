@@ -5,7 +5,7 @@ import { PrismaClient } from "@prisma/client";
 // import { prisma } from "@/prisma"
 const prisma = new PrismaClient();
 
-const handler= NextAuth({
+const handler = NextAuth({
   providers: [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -13,7 +13,22 @@ const handler= NextAuth({
     }),
   ],
   adapter: PrismaAdapter(prisma),
+  callbacks: {
+    async session({ session }) {
+      const sessionUser = await prisma.user.findUnique({
+        where: {
+          email: session.user?.email!,
+        },
+      });
+
+      if (sessionUser) {
+        session.user = {
+          ...session.user,
+        };
+      }
+      return session;
+    },
+  },
 });
 
-
-export {handler as GET, handler as POST}
+export { handler as GET, handler as POST };

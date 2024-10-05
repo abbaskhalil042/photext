@@ -1,9 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-    
-        domains: ['lh3.googleusercontent.com'],
-    },
+  images: {
+    domains: ["lh3.googleusercontent.com"],
+
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "image.pollinations.ai",
+        port: "",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
