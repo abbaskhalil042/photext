@@ -49,22 +49,26 @@ const Page = () => {
   const imagePath = generatedImage ? generatedImage.replace(baseUrl, "") : "";
 
   return (
-    <div className="flex flex-col justify-center items-center bg-gradient-to-br from-[#173431] to-pink-00 text-gray-800 w-full h-screen pt-10 lg:pt-20">
+    <div className="flex flex-col justify-center items-center bg-gradient-to-br from-[#173431] to-pink-00 text-gray-800 w-full h-full pt-10 lg:pt-20">
       <div className="text-center mb-8">
+        
+       
         <h1 className="flex justify-center font-extrabold mb-4">
+
           <span className="text-6xl text-white ">Photext AI</span>
           <span className="bg-gradient-to-r rounded-full from-pink-400 via-orange-400 to-yellow-400 w-fit">
             <Sparkles />
           </span>
         </h1>
-        <p className="text-black lg:w-[60rem] w-[25rem] text-lg mb-6">
-          Unlock your creative potential and bring your ideas to life with
-          Photext AI. Explore the infinite possibilities of AI-generated art,
-          tailored to your unique vision.
-        </p>
+        {/* <p className="text-black lg:w-[60rem] w-[25rem] text-lg font-semibold mb-6 bg-gradient-to-r from-[#212f61] to-[#493240] p-2 rounded-md"> */}
+          <h2 className="text-transparent text-3xl font-bold bg-clip-text bg-gradient-to-r from-[#3c6795] to-[#493240]">Photext AI is an AI-powered image generator. 
+            <br />
+
+          </h2>
+        {/* </p> */}
       </div>
 
-      <div className="lg:flex lg:justify-around w-full items-center flex flex-col gap-5">
+      <div className="lg:flex lg:justify-around w-full items-center flex flex-col lg:flex-row gap-5">
         <div className="mr-4 flex-col lg:flex lg:flex-row lg:items-center gap-3">
           <input
             onChange={(e) => setInputPrompt(e.target.value)}
@@ -104,11 +108,8 @@ const Page = () => {
           </Button>
         </div>
 
-        <div className="w-full">
-          <InfiniteMovingCardsDemo />
-        </div>
 
-        <div className="flex w-full max-w-[25rem] h-[25rem] bg-gray-700 rounded shadow-lg">
+        <div className="flex  w-full max-w-[25rem] h-[25rem] bg-gray-700 rounded shadow-lg">
           {loading ? (
             <div className="flex justify-center items-center w-full h-full">
               <Loader className="animate-spin w-5 h-5" />
@@ -130,6 +131,9 @@ const Page = () => {
           )}
         </div>
       </div>
+      <div className="w-full">
+          <InfiniteMovingCardsDemo />
+        </div>
     </div>
   );
 };
