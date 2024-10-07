@@ -10,7 +10,7 @@ import { Loader, Loader2Icon, Sparkles } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { PrismaClient } from "@prisma/client";
 import { InfiniteMovingCardsDemo } from "@/components/MovingInfinitesCard";
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 const Page = () => {
   const [inputPrompt, setInputPrompt] = useState<string>("");

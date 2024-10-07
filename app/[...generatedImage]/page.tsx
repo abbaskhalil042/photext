@@ -1,7 +1,7 @@
 'use client'
 import axios from 'axios'
 import Image from 'next/image'
-import { useParams, useSearchParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import React, { useState } from 'react'
 
 const page = () => {
