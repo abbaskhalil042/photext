@@ -6,7 +6,6 @@ const page : React.FC = () => {
   return (
   <>
   <Home />
-
   </>
   )
 }

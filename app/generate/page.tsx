@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Loader, Loader2Icon, Sparkles } from "lucide-react";
 import { useSession } from "next-auth/react";
-import { PrismaClient } from "@prisma/client";
+// import { PrismaClient } from "@prisma/client";
 import { InfiniteMovingCardsDemo } from "@/components/MovingInfinitesCard";
 // const prisma = new PrismaClient();
 
