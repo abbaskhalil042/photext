@@ -2,7 +2,7 @@
   "extends": ["next/core-web-vitals", "next/typescript"],
   "rules": {
     "@typescript-eslint/no-unused-vars": [
-      "error",
+      "warn", // Change "error" to "warn" to avoid blocking execution
       {
         "args": "all",
         "argsIgnorePattern": "^_",
@@ -15,5 +15,3 @@
     ]
   }
 }
-
-

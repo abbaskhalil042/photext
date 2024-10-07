@@ -17,7 +17,7 @@ const handler = NextAuth({
     async session({ session }) {
       const sessionUser = await prisma.user.findUnique({
         where: {
-          email: session.user?.email!,
+          email: session.user?.email as string,
         },
       });
 
