@@ -15,6 +15,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 
 import icon from "../app/icon/icon1.png";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +44,7 @@ const Navbar = () => {
               transition={{ duration: 0.5 }}
               className="text-2xl font-bold flex items-center"
             >
-              <div className="flex items-center justify-center gap-1">
+              <Link href="/" className="flex items-center justify-center gap-1">
                 <Image
                   className="w-10 h-10"
                   src={icon}
@@ -56,7 +57,7 @@ const Navbar = () => {
                     <Sparkles />
                   </span>
                 </span>
-              </div>
+              </Link>
             </motion.div>
 
             {/* Desktop view */}

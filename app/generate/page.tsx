@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Loader, Loader2Icon, Sparkles } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { PrismaClient } from "@prisma/client";
+import { InfiniteMovingCardsDemo } from "@/components/MovingInfinitesCard";
 const prisma = new PrismaClient();
 
 const Page = () => {
@@ -48,16 +49,18 @@ const Page = () => {
   const imagePath = generatedImage ? generatedImage.replace(baseUrl, "") : "";
 
   return (
-    <div className="flex flex-col justify-center items-center bg-gradient-to-br from-[#0e756a] to-pink-300 text-gray-800 w-full h-screen pt-10 lg:pt-20">
+    <div className="flex flex-col justify-center items-center bg-gradient-to-br from-[#173431] to-pink-00 text-gray-800 w-full h-screen pt-10 lg:pt-20">
       <div className="text-center mb-8">
         <h1 className="flex justify-center font-extrabold mb-4">
-          <span className="text-6xl">Photext AI</span>
+          <span className="text-6xl text-white ">Photext AI</span>
           <span className="bg-gradient-to-r rounded-full from-pink-400 via-orange-400 to-yellow-400 w-fit">
             <Sparkles />
           </span>
         </h1>
         <p className="text-black lg:w-[60rem] w-[25rem] text-lg mb-6">
-          Unlock your creative potential and bring your ideas to life with Photext AI. Explore the infinite possibilities of AI-generated art, tailored to your unique vision.
+          Unlock your creative potential and bring your ideas to life with
+          Photext AI. Explore the infinite possibilities of AI-generated art,
+          tailored to your unique vision.
         </p>
       </div>
 
@@ -101,7 +104,11 @@ const Page = () => {
           </Button>
         </div>
 
-        <div className="flex w-full max-w-[25rem] h-[25rem] bg-white rounded shadow-lg">
+        <div className="w-full">
+          <InfiniteMovingCardsDemo />
+        </div>
+
+        <div className="flex w-full max-w-[25rem] h-[25rem] bg-gray-700 rounded shadow-lg">
           {loading ? (
             <div className="flex justify-center items-center w-full h-full">
               <Loader className="animate-spin w-5 h-5" />

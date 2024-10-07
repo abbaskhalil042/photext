@@ -7,8 +7,19 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
  async function POST(req: NextRequest) {
+
+
   const body = await req.json();
   const { prompt } = body;
+
+  //check if user is logged in
+  // const session = await useSession();
+  // if (!session) {
+  //   return NextResponse.json(
+  //     { msg: "Unauthorized", error: true },
+  //     { status: 401 }
+  //   );
+  // }
 
   try {
     if (!prompt || typeof prompt !== "string" || prompt.trim() === "") {
